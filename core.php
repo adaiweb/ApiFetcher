@@ -1,9 +1,16 @@
 <?php 
 
+/**
+* Загрузка настроек и проверка системы
+*/
+$set = parse_ini_file (ROOT . 'Config/config.ini', TRUE);
+version_compare (phpversion(), '7.2.11', '>=') or die ('Требуется PHP >= 7.2.11');
+
+
 require_once(ROOT."Classes/Functions.class.php");
 
 require_once(ROOT."Classes/MyRedis.class.php");
-$redis = new MyRedis;
+$redis = new MyRedis($set['redis']['scheme'],$set['redis']['port'],$set['redis']['host'],$set['redis']['password'],$set['redis']['expire_time']);
 
 require_once(ROOT."Classes/YoutubeCrawler.class.php");
 /**

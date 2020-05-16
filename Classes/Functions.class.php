@@ -9,7 +9,7 @@ class Functions {
      * @return string OR array
      */
     public function __call($name, $key) {
-     	require_once(ROOT . '/Functions/' . $name . '.php');
+     	require_once(ROOT . '/Functions/function.' . $name . '.php');
      	return call_user_func_array($name, $key);
     }
 }

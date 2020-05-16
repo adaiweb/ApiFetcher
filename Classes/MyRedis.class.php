@@ -21,12 +21,12 @@ class MyRedis
     /**
      * MyRedis constructor.
      */
-    public function __construct($scheme,$host,$port,$password='',$redis_expire = 3600)
+    public function __construct($host,$port,$password='',$redis_expire = 3600)
     {
 
         try {
             $this->redis = new Redis();
-            $this->redis->connect($host, $port);
+            $this->redis->connect($host, intval($port));
             
             if(!empty($password)) $this->redis->auth($password);
 

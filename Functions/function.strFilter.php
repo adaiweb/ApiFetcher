@@ -1,5 +1,6 @@
 <?php 	
-function myfiltr($q){
+function strFilter($q){
+	global $function;
     $q = mb_strtolower($q, 'UTF-8');
     $q = $function->filterUnwantedLetters($q);
     $q=str_replace(array('Ѻ','ø'),'o',$q);

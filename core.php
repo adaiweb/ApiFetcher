@@ -63,6 +63,8 @@ $function = new Functions;
 require_once(ROOT."/Classes/MyRedis.class.php");
 $redis = new MyRedis($set['redis']['host'],$set['redis']['port'],$set['redis']['password'],$set['redis']['expire_time']);
 
+$myredis = new MyRedis("localhost",$set['redis']['port'],$set['redis']['password'],$set['redis']['expire_time']);
+
 /** Подключение класса Youtube Crawler */
 require_once(ROOT."/Classes/YoutubeCrawler.class.php");
 

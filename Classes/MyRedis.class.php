@@ -57,10 +57,10 @@ class MyRedis
      */
     public function set(string $key, $data, int $expire = null)
     {   
-        $expire = (is_null($expire)) ? $this->redis_expire : $expire;
-         $this->redis->set($key, serialize($data));
-         $this->redis->expire($encodedKey, $expire);
-
+        // $expire = (is_null($expire)) ? $this->redis_expire : $expire;
+        //  $this->redis->set($key, serialize($data));
+        //  $this->redis->expire($encodedKey, $expire);
+         $this->redis->set($key,$data,$expire);
          return '';
     }
 

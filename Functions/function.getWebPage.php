@@ -1,7 +1,6 @@
-<?php 
+<?php   
 
-
-function get_web_page($url)
+function getWebPage($url)
 {
   $uagent = "Opera/9.80 (Windows NT 6.1; WOW64) Presto/2.12.388 Version/12.14";
 
@@ -27,3 +26,4 @@ function get_web_page($url)
   $header['content'] = $content;
   return $content;
 }
+ ?>

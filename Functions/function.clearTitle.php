@@ -15,7 +15,9 @@ Group 2.	(
 */
 	preg_match($re, $string, $matches, PREG_OFFSET_CAPTURE, 0);
 
-	return $matches[1];
+	$newstring = !empty($matches[1][0]) ? $matches[1][0] : $string;
+
+	return $newstring;
 
 }
 

@@ -3,7 +3,7 @@
 class Crawler
 {	
 
-	private function curl_get_contents($url)
+	public static function curl_get_contents($url)
 	{
 	  $uagent = "Opera/9.80 (Windows NT 6.1; WOW64) Presto/2.12.388 Version/12.14";
 

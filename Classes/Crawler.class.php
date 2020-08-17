@@ -1,6 +1,6 @@
 <?php 
 
-class VkCrawler extends Crawler
+class Crawler
 {	
 
 

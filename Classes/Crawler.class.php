@@ -1,17 +1,19 @@
 <?php 
 
-class YoutubeCrawler extends Crawler
+class VkCrawler extends Crawler
 {	
+
 
 	public static function search($query){
 
-		$url = API_BASE_URL.'api.php?query='.urlencode($query).'&method=search&iaadminept=on';
+		$url = API_BASE_URL.'?query='.urlencode($query).'&method=search&iaadminept=on';
 	
 		$json = self::curl_get_contents($url);
 
 		return $json;
 
 	}
+
 	
 
 }

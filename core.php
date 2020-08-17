@@ -65,8 +65,14 @@ $redis = new MyRedis($set['redis']['host'],$set['redis']['port'],$set['redis']['
 
 $myredis = new MyRedis("localhost",$set['redis']['port'],$set['redis']['password'],$set['redis']['expire_time']);
 
+/** Подключение класса Crawler */
+require_once(ROOT."/Classes/Crawler.class.php");
+
 /** Подключение класса Youtube Crawler */
 require_once(ROOT."/Classes/YoutubeCrawler.class.php");
+
+/** Подключение класса VK Crawler */
+require_once(ROOT."/Classes/VkCrawler.class.php");
 
 
 

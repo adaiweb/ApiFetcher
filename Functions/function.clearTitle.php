@@ -2,7 +2,16 @@
 
 function clearTitle($string){
 
-	$re = '/(.*?) (\(|\[|\|)/m';
+$pattern1 = '/(\(.*?\))/mi';
+$replacement = '';
+$new_string = preg_replace($pattern1, $replacement, $string);
+
+$pattern2 = '/(\[.*?\])/mi';
+$new_string = preg_replace($pattern2, $replacement, $new_string);
+
+return $new_string;
+
+	// $re = '/(.*?) (\(|\[|\|)/m';
 /* strings:
     'GHOSTEMANE - Mercury (Extreme Bass boosted)
 	GHOSTEMANE - Mercury [Lyrics / Lyric Video]
@@ -13,11 +22,11 @@ Full match	GHOSTEMANE - Mercury (
 Group 1.	GHOSTEMANE - Mercury
 Group 2.	(
 */
-	preg_match($re, $string, $matches, PREG_OFFSET_CAPTURE, 0);
+	// preg_match($re, $string, $matches, PREG_OFFSET_CAPTURE, 0);
 
-	$newstring = !empty($matches[1][0]) ? $matches[1][0] : $string;
+	// $newstring = !empty($matches[1][0]) ? $matches[1][0] : $string;
 
-	return $newstring;
+	// return $newstring;
 
 }
 

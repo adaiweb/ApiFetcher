@@ -70,7 +70,14 @@ require_once(ROOT."/Classes/Crawler.class.php");
 
 /** Подключение класса Youtube Crawler */
 require_once(ROOT."/Classes/YoutubeCrawler.class.php");
+<<<<<<< HEAD
  
+=======
+
+/** Подключение класса VK Crawler */
+require_once(ROOT."/Classes/VkCrawler.class.php");
+
+>>>>>>> e5555c22dc0cd4977702748f55d17cc2d48c2311
 
 
  

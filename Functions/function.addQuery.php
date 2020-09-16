@@ -3,7 +3,9 @@
 function addQuery($line,$max=20,$fileName) {
 
     // Remove Empty Spaces
-    $file = array_filter(array_map("trim", file($fileName)));
+    // die($fileName);
+    $file = array_filter(array_map("trim", file_get_contents($fileName)));
+    // die($file);
 
     // Make Sure you always have maximum number of lines
     $file = array_slice($file, 0, $max);

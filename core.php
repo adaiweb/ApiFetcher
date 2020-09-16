@@ -10,10 +10,10 @@ define ('ROOT', str_replace('system/core', '', str_replace(DIRECTORY_SEPARATOR, 
 * Основные конфигурации системы
 */
 ini_set ('error_reporting', -1);  								// Включаем полное отображение ошибок
-ini_set ('xhtml_errors', TRUE);   								// Включаем полное отображение ошибок xHTML разметки
+ini_set ('xhtml_errors', FALSE);   								// Включаем полное отображение ошибок xHTML разметки
 
 ini_set ('display_errors', FALSE); 								// Включаем вывод ошибок на экран
-ini_set ('ignore_repeated_errors', TRUE);       				// Выключаем повторый показ ошибок
+ini_set ('ignore_repeated_errors', FALSE);       				// Выключаем повторый показ ошибок
 ini_set ('session.use_trans_sid', FALSE);       				// Выключаем подстановку PHPSESSID в ссылки
 ini_set ('magic_quotes_gpc', FALSE);                            // Выключаем экранирование кавычек
 ini_set ('magic_quotes_runtime', FALSE);                        // Выключаем экранирование кавычек
@@ -21,10 +21,10 @@ ini_set ('magic_quotes_sybase', FALSE);                         // Выключ�
 ini_set ('register_globals', FALSE);                            // Выключаем глобальные переменные
 ini_set ('arg_separator.output', '&amp;');      				// Включаем переобразование & в &amp;
 
+
 ini_set('error_reporting',E_ALL);
 ini_set('display_errors',1);
 ini_set('display_startup_errors',1);
-  
 
 
 mb_internal_encoding ('UTF-8'); 								// Устанавливаем кодировку UTF-8
@@ -65,9 +65,12 @@ $redis = new MyRedis($set['redis']['host'],$set['redis']['port'],$set['redis']['
 
 $myredis = new MyRedis("localhost",$set['redis']['port'],$set['redis']['password'],$set['redis']['expire_time']);
 
+/** Подключение класса Crawler */
+require_once(ROOT."/Classes/Crawler.class.php");
+
 /** Подключение класса Youtube Crawler */
 require_once(ROOT."/Classes/YoutubeCrawler.class.php");
-
+ 
 
 
  

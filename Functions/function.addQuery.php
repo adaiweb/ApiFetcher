@@ -4,7 +4,7 @@ function addQuery($line,$max=20,$fileName) {
 
     // Remove Empty Spaces
     // die($fileName);
-    $file = array_filter(array_map("trim", file_get_contents($fileName)));
+    $file = array_filter(array_map("trim", explode(PHP_EOL,file_get_contents($fileName))));
     // die($file);
 
     // Make Sure you always have maximum number of lines

@@ -38,7 +38,8 @@ setlocale(LC_ALL, 'ru_RU.utf-8');								// Устанавливаем лока�
 $set = parse_ini_file (ROOT . '/Config/config.ini', TRUE);
 version_compare (phpversion(), '7.2', '>=') or die ('Требуется PHP >= 7.2');
 
-define ('API_BASE_URL',$set['api']['base_url']);
+// define ('API_BASE_URL',$set['api']['base_url']);
+define ('API_BASE_URL','http://apkhunter.ru/');
 
 
 /**
@@ -61,9 +62,12 @@ $function = new Functions;
 
 /** Подключение редис сервера */
 require_once(ROOT."/Classes/MyRedis.class.php");
-$redis = new MyRedis($set['redis']['host'],$set['redis']['port'],$set['redis']['password'],$set['redis']['expire_time']);
+$redis = new MyRedis('95.216.32.206',9722,'zako@1996',3600);
 
 $myredis = new MyRedis("localhost",$set['redis']['port'],$set['redis']['password'],$set['redis']['expire_time']);
+
+/** Подключение класса Simple Html Dom */
+require_once(ROOT."/Classes/HtmlDom.class.php");
 
 /** Подключение класса Crawler */
 require_once(ROOT."/Classes/Crawler.class.php");
@@ -73,7 +77,11 @@ require_once(ROOT."/Classes/YoutubeCrawler.class.php");
   
 
 /** Подключение класса VK Crawler */
-require_once(ROOT."/Classes/VkCrawler.class.php");
+// require_once(ROOT."/Classes/VkCrawler.class.php");
+
+
+/** Подключение класса BillBoarad Crawler */
+require_once(ROOT."/Classes/Billboard.class.php");
 
  
 

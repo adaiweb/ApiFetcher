@@ -83,6 +83,11 @@ require_once(ROOT."/Classes/YoutubeCrawler.class.php");
 /** Подключение класса BillBoarad Crawler */
 require_once(ROOT."/Classes/Billboard.class.php");
 
+
+
+/** Подключение класса BillBoarad Crawler */
+require_once(ROOT."/Classes/YoutubePlaylist.class.php");
+
  
 
  

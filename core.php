@@ -66,6 +66,9 @@ $redis = new MyRedis('95.216.32.206',9722,'zako@1996',3600);
 
 // $myredis = new MyRedis("localhost",$set['redis']['port'],$set['redis']['password'],$set['redis']['expire_time']);
 
+/** Подключение класса Simple Html Dom */
+require_once(ROOT."/Classes/HtmlDom.class.php");
+
 /** Подключение класса Crawler */
 require_once(ROOT."/Classes/Crawler.class.php");
 
@@ -74,7 +77,16 @@ require_once(ROOT."/Classes/YoutubeCrawler.class.php");
   
 
 /** Подключение класса VK Crawler */
-require_once(ROOT."/Classes/VkCrawler.class.php");
+// require_once(ROOT."/Classes/VkCrawler.class.php");
+
+
+/** Подключение класса BillBoarad Crawler */
+require_once(ROOT."/Classes/Billboard.class.php");
+
+
+
+/** Подключение класса YoutubePlaylist Crawler */
+require_once(ROOT."/Classes/YoutubePlaylist.class.php");
 
  
 

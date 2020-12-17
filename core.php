@@ -41,6 +41,15 @@ version_compare (phpversion(), '7.2', '>=') or die ('Требуется PHP >= 7
 // define ('API_BASE_URL',$set['api']['base_url']);
 define ('API_BASE_URL','http://apkhunter.ru/');
 
+$bad_bots = ['blexbot','ahrefsbot','vagabondo','seo','ia_archiver','archive','special_archiver','mj12bot','special_archiver','heritrix','netestate ne crawler','wbsearchbot','queryseekerspider','proximic','siteexplorer','similarweb','msnbot'];
+
+$useragent = strtolower($_SERVER['HTTP_USER_AGENT']);
+
+if(strlen($useragent)!=strlen(str_replace($bad_bots, '', $useragent))){
+	header("HTTP/1.0 404 Not Found"); 
+	die('404 NOT FOUND'); 
+}
+
 
 /**
 * Подключение необходимых классов

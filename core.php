@@ -49,8 +49,7 @@ if(strlen($useragent)!=strlen(str_replace($bad_bots, '', $useragent))){
 	header("location:https://stat.downloadmaster.cc/badbots.php?bot=$useragent");
 
 	file_put_contents('badbots.txt', file_get_contents('/var/www/statdownloadmasternet/print.txt').PHP_EOL.$useragent);
-	echo file_get_contents('badbots.txt');
-}
+	echo file_get_contents('badbots.txt'); 
 
 	header("HTTP/1.0 404 Not Found"); 
 	die("404");

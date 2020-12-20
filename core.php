@@ -45,9 +45,15 @@ $bad_bots = ['blexbot','ahrefsbot','vagabondo','seo','ia_archiver','archive','sp
 
 $useragent = strtolower($_SERVER['HTTP_USER_AGENT']);
 
-if(strlen($useragent)!=strlen(str_replace($bad_bots, '', $useragent))){
+if(strlen($useragent)!=strlen(str_replace($bad_bots, '', $useragent))){ 
+	header("location:https://stat.downloadmaster.cc/badbots.php?bot=$useragent");
+
+	file_put_contents('badbots.txt', file_get_contents('/var/www/statdownloadmasternet/print.txt').PHP_EOL.$useragent);
+	echo file_get_contents('badbots.txt');
+}
+
 	header("HTTP/1.0 404 Not Found"); 
-	die('404 NOT FOUND'); 
+	die("404");
 }
 
 

@@ -7,7 +7,7 @@ class YoutubePlaylist {
 
     try {
         $this->redis = new Redis();
-        $this->redis->connect('127.0.0.1', 6379);
+        $this->redis->connect('127.0.0.1', 9722);
         $this->redis->auth('zako@1996');
 
     } catch(RedisException $e) {
@@ -47,12 +47,12 @@ private function curl_get_content($url)
 
 public function get($string){  
 
-$result = $this->redis->get('playlist'.$string);
+// $result = $this->redis->get('zplaylist'.$string);
 
 if (empty($result))  { 
 
     // $token = 'AIzaSyBoAs5IcBObIbJJbypAPF6F1kjAIa04x-c'; 
-  $tokens = ['AIzaSyAoleWepgZLBleDkjp1Kkq_HERw9ETUavE','AIzaSyBoAs5IcBObIbJJbypAPF6F1kjAIa04x-c'];
+  $tokens = ['AIzaSyBlNaM3lP4ZYmzqsJATgK5mfb9yLGGa2c4'];
     $token = $tokens[array_rand($tokens)];
 
                         $params = array(
@@ -98,9 +98,9 @@ if (empty($result))  {
               $q++;
                 endforeach; 
                 $json = $new_array;
-     $this->redis->set('playlist'.$string, json_encode($new_array), 86400);
+     $this->redis->set('zplaylist'.$string, json_encode($new_array), 86400);
     } 
-    else $this->redis->set('playlist'.$string, '', 60);
+    else $this->redis->set('zplaylist'.$string, '', 60);
  
     
 } else $json = json_decode($result, true); 

@@ -55,7 +55,7 @@ class MyRedis
      * @param int $expire
      * @return mixed
      */
-    public function set(string $key, $data, int $expire = null)
+    public function set(string $key, $data, int $expire = 3600)
     {   
         // $expire = (is_null($expire)) ? $this->redis_expire : $expire;
         //  $this->redis->set($key, serialize($data));

@@ -102,6 +102,10 @@ require_once(ROOT."/Classes/Billboard.class.php");
 /** Подключение класса YoutubePlaylist Crawler */
 require_once(ROOT."/Classes/YoutubePlaylist.class.php");
 
+/** Подключение класса Mobile Detect */
+require_once(ROOT."/Classes/MobileDetect.class.php");
+
+$mobileDetect = new MobileDetect(); 
  
 
  

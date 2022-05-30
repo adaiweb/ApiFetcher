@@ -78,7 +78,7 @@ $function = new Functions;
 require_once(ROOT."/Classes/MyRedis.class.php");
 // $redis = new MyRedis('127.0.0.1','9722','zako@1996',3600);
 
-$myredis = new MyRedis("localhost",9722,$set['redis']['password'],$set['redis']['expire_time']);
+$myredis = new MyRedis($set['redis']['host'],$set['redis']['port'],$set['redis']['password'],$set['redis']['expire_time']);
 
 /** Подключение класса Simple Html Dom */
 require_once(ROOT."/Classes/HtmlDom.class.php");

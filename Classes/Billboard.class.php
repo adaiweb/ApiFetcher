@@ -10,7 +10,7 @@ class BillBoard extends Crawler {
 		$url = self::$base_url.$slug;
 		// die($url);
 
-		$file = self::get_web_page($url);
+		$file = self::curl_get_page($url);
 
 		$posA = strpos($file, '<h1');
 

@@ -1,7 +1,7 @@
 <?php 
 
 
-class BillBoard {
+class BillBoard extends Crawler {
 
 	private static $base_url = 'https://www.billboard.com/';
 
@@ -10,7 +10,7 @@ class BillBoard {
 		$url = self::$base_url.$slug;
 		// die($url);
 
-		$file = file_get_contents($url);
+		$file = self::get_web_page($url);
 
 		$posA = strpos($file, '<h1');
 
